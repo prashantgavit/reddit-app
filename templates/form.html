@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="{{url_for('static', filename='js/datecheck.js')}}"></script>
+  </head>
+  <head>
+    <title>Reddit Data Fetching App</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename ='styles/form.css')}}" />
+  </head>
+  <body>
+    <div class="testbox">
+      <form name= "myForm" action="{{ url_for('index') }}" onsubmit="return validateForm()" method="post">
+        <div class="banner">
+          <h1>Reddit Form</h1>
+        </div>
+        <p class="top-info">Thank you for your showing interest in this app.</p>
+        <div class="subreddit">
+          <div class="item">
+            <p>Subreddit<span class="required" >*</span></p>
+            <input type="text" name="subreddit" >
+          </div>
+        </div>
+        <div  class="position-item">
+          <div class="item">
+            <p>Start date<span class="required">*</span></p>
+            <input type="date" name="startdate" >
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="item">
+            <p>End date<span class="required">*</span></p>
+            <input type="date" name="enddate" >
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+        </div>
+        <div class="btn-block">
+          <button type="submit"  >Get Data</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
